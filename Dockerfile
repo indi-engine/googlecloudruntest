@@ -27,10 +27,12 @@ RUN echo "ServerName indi-engine"      >> apache2.conf  && \
     echo "<Directory /var/www/html>"   >> apache2.conf  && \
     echo "  AllowOverride All"         >> apache2.conf  && \
     echo "</Directory>"                >> apache2.conf  && \
+    cp mods-available/http2.load          mods-enabled/ && \
     cp mods-available/rewrite.load        mods-enabled/ && \
     cp mods-available/headers.load        mods-enabled/ && \
     cp mods-available/proxy.load          mods-enabled/ && \
     cp mods-available/proxy_http.load     mods-enabled/ && \
+    cp mods-available/proxy_http2.load    mods-enabled/ && \
     cp mods-available/proxy_wstunnel.load mods-enabled/
 ## </Apache> ##
 
